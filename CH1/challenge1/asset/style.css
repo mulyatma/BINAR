@@ -1,0 +1,226 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+a {
+  text-decoration: none;
+  color: #000;
+}
+
+li {
+  list-style-type: none;
+}
+
+button {
+  background-color: #5cb85f;
+  color: #fff;
+  border: 0;
+  border-radius: 2px;
+  padding: 8px 12px;
+}
+
+section {
+  padding: 50px 136px;
+}
+
+/* NAVBAR */
+.brand {
+  width: 100px;
+  height: 34px;
+  background-color: #0d28a6;
+}
+
+.navigation {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 32px;
+  margin: 0px;
+}
+
+header {
+  padding: 1.5rem 124px;
+}
+
+/* MAIN */
+/* HOME */
+#home {
+  padding-top: 0;
+  padding-right: 0;
+}
+#home .container-fluid,
+.img {
+  padding: 0;
+}
+
+/* OUR SERVICES */
+#ourservices .col-lg-6 ul {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+#ourservices .col-lg-6 ul img {
+  padding-right: 1rem;
+}
+
+/* WHY US */
+.card-body {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.card-body img {
+  width: max-content;
+}
+
+/* TERSTIMONIAL */
+.carousel {
+  width: 832px;
+  background: #f1f3ff;
+  padding: 69px;
+}
+
+.carousel-item .row {
+  align-items: center;
+}
+
+.carousel-item .row .col-lg-3 img {
+  margin-left: 30%;
+}
+
+.stars {
+  padding: 0;
+  margin-bottom: 0.5rem;
+}
+
+/* CTA BANNER */
+#ctabanner .container {
+  color: #fff;
+  border-radius: 13px;
+  background: #0d28a6;
+  padding: 64px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+#ctabanner .container h1 {
+  margin-bottom: 16px;
+}
+#ctabanner .container button {
+  margin-top: 16px;
+}
+
+/* FQA */
+.accordion-item button {
+  border-radius: 4px;
+  border: 1px solid #d4d4d4;
+}
+
+.accordion-body {
+  border: 1px solid #d4d4d4;
+  border-radius: 4px;
+}
+
+.accordion {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+/* FOOTER */
+#footer {
+  display: flex;
+  flex-direction: row;
+  gap: 86px;
+}
+
+.fnavigation {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.ficon {
+  display: flex;
+  gap: 1rem;
+}
+
+/* BREAK POIN */
+@media only screen and (max-width: 768px) {
+  header {
+    padding: 24px 16px 0 16px;
+  }
+
+  .offcanvas-size-md {
+    /* add Responsivenes to default offcanvas */
+    --bs-offcanvas-width: 50% !important;
+  }
+
+  .navbar .container {
+    padding: 0;
+  }
+
+  .offcanvas {
+    width: 50%;
+  }
+
+  section {
+    padding: 30px 16px;
+  }
+
+  #home img {
+    width: 100%;
+    padding-left: 1rem;
+  }
+
+  #home {
+    padding: 1rem;
+  }
+
+  .imgourservices img {
+    width: 80%;
+  }
+
+  #ourservices .col-lg-6,
+  ul {
+    padding-left: 0;
+  }
+
+  #whyus .container {
+    padding: 0;
+  }
+  #whyus .container .row {
+    gap: 1rem;
+  }
+
+  .carousel {
+    width: 100%;
+  }
+
+  .carousel-item .row {
+    justify-content: center;
+  }
+
+  .carousel-item .row img {
+    padding-bottom: 1.5rem;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .stars {
+    padding-left: 45px;
+  }
+
+  #footer {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  footer section {
+    padding-bottom: 60px;
+  }
+}
