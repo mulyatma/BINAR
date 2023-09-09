@@ -50,6 +50,61 @@ section {
 }
 
 /* MAIN */
+/* CARI MOBIL */
+#carimobil {
+  padding: 1.5rem;
+  margin: -50px 196px 108px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.15);
+  background-color: white;
+  position: relative;
+  z-index: 2;
+}
+
+#search .row button {
+  width: 100%;
+  margin-top: 1.4rem;
+}
+
+label {
+  font-size: 12px;
+  font-family: "Poppins", sans-serif;
+}
+
+/* HASIL CARI MOBIL */
+.cars-card {
+  border-radius: 0.5rem;
+  box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.15);
+  padding: 1.5rem;
+}
+.cars-card .container-fluid {
+  padding: 0;
+  margin-bottom: 1rem;
+}
+
+.cars-card ul {
+  padding: 0;
+  gap: 1rem;
+}
+
+.cars-card ul img {
+  margin: 0;
+  padding-right: 0.5rem;
+}
+
+.cars-card img {
+  margin-bottom: 1rem;
+}
+
+.cars-card p,
+h5 {
+  margin: 0rem;
+}
+
+.cars-card button {
+  width: 100%;
+  text-align: center;
+}
+
 /* HOME */
 #home {
   background: #f1f3ff;
