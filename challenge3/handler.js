@@ -2,6 +2,7 @@ import cars from "./data/cars.json" assert { type: "json" };
 import { randomUUID } from "crypto";
 
 let tempCars = cars;
+const UUID = randomUUID();
 
 // GET Server Response
 function serverRespons(req, res) {
@@ -23,7 +24,7 @@ function handleListCarId(req, res) {
 // POST New Car
 function handlePostCar(req, res) {
   const body = req.body;
-  const newData = { id: randomUUID, ...body };
+  const newData = { id: UUID, ...body };
   tempCars.push(newData);
   res.status(201).json(newData);
 }
