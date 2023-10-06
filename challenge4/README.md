@@ -16,8 +16,8 @@ THIS CHALLENGE IS MAKING RESTFUL API FOR CAR DATA MANAGEMENT WITH DATABASE USING
      - `$ npm install --save sqlite3`
      - `$ npm install --save tedious` # Microsoft SQL Server
      - `$ npm install --save oracledb` # Oracle Database
-   - install Sequlize-cli `npm install --save-dev sequelize-cli`
-   - configure the config.json file in `config/config.json`
+   - install Sequlize-cli `$ npm install --save-dev sequelize-cli`
+   - configure the config.json file in `$ config/config.json`
 
 # END POINTS
 
