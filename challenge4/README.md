@@ -18,6 +18,14 @@ THIS CHALLENGE IS MAKING RESTFUL API FOR CAR DATA MANAGEMENT WITH DATABASE USING
      - `$ npm install --save oracledb` # Oracle Database
    - install Sequlize-cli `$ npm install --save-dev sequelize-cli`
    - configure the config.json file in `config/config.json`
+3. Creat database if not exists
+   ```sequelize db:create```
+5. Runing migration
+   ```sequelize db:migrate```
+6. Runing seeds
+   ```sequelize db:seed:all```
+8. Running app
+   ```npm run start```
   
 # ENTITY RELATIONSHIP DIAGRAM
 
