@@ -15,18 +15,225 @@ module.exports = {
 
     return queryInterface.bulkInsert("Cars", [
       {
-        image: "./images/car25.min.jpg",
+        id: "6e2bc663-5197-441a-957b-bc75e4a2da7c",
+        image: "./images/car01.min.jpg",
         rentPerDay: 200000,
         capacity: 2,
         description:
-          "Electric speed-sensitive variable-assist pwr steering. Steel side-door impact beams.",
+          " Brake assist. Leather-wrapped shift knob. Glove box lamp. Air conditioning w/in-cabin microfilter.",
         availableAt: "2022-03-23T15:49:05.563Z",
       },
       {
-        image: "./images/car01.min.jpg",
-        rentPerDay: 400000,
+        id: "9ff03bbc-b18c-4ba7-8f3a-4c4b5c2f6c77",
+        image: "./images/car02.min.jpg",
+        rentPerDay: 800000,
+        capacity: 6,
+        description:
+          " Rear passenger map pockets. Electrochromic rearview mirror. Dual chrome exhaust tips. Locking glove box.",
+        availableAt: "2022-03-23T15:49:05.563Z",
+      },
+      {
+        id: "bf6b5c43-1377-4ae0-8908-310c64266f81",
+        image: "./images/car03.min.jpg",
+        rentPerDay: 900000,
+        capacity: 6,
+        description:
+          " Driver & front passenger map pockets. Direct-type tire pressure monitor system. Cargo area lamp. Glove box lamp.",
+        availableAt: "2022-03-23T15:49:05.563Z",
+      },
+      {
+        id: "5b67f1d7-92d4-41c7-8577-4435740aadf1",
+        image: "./images/car04.min.jpg",
+        rentPerDay: 900000,
+        capacity: 6,
+        description: ' 6.1L SRT V8 "Hemi" engine.',
+        availableAt: "2022-03-23T15:49:05.563Z",
+      },
+      {
+        id: "23574b8f-3e89-4685-a348-67c1f7e5b3c4",
+        image: "./images/car05.min.jpg",
+        rentPerDay: 200000,
         capacity: 2,
-        description: "Electric speed-sensitive variable-assist pwr steering.",
+        description:
+          " Body color sill extension. Torsion beam rear suspension w/stabilizer bar. Front & rear passenger folding assist grips.",
+        availableAt: "2022-03-23T15:49:05.563Z",
+      },
+      {
+        id: "3eead6db-c536-406b-9bc5-85d4c6e38a76",
+        image: "./images/car06.min.jpg",
+        rentPerDay: 900000,
+        capacity: 4,
+        description:
+          " Tilt steering column. Carpeted cargo area. Tip start system. Leather-wrapped shift knob.",
+        availableAt: "2022-03-23T15:49:05.563Z",
+      },
+      {
+        id: "752685ce-dd39-40e5-9af5-93fdd36dea7e",
+        image: "./images/car07.min.jpg",
+        rentPerDay: 900000,
+        capacity: 4,
+        description:
+          " Silver finish interior door handles. 160-amp alternator. Tire pressure monitoring system (TPMS). Cloth covered headliner.",
+        availableAt: "2022-03-23T15:49:05.563Z",
+      },
+      {
+        id: "d97e0af5-2728-4ce3-ba7f-9d83a0837db6",
+        image: "./images/car08.min.jpg",
+        rentPerDay: 300000,
+        capacity: 2,
+        description:
+          " XM satellite radio receiver -inc: 90 day trial subscription. Dual front illuminated visor vanity mirrors.",
+        availableAt: "2022-03-23T15:49:05.563Z",
+      },
+      {
+        id: "0d5de078-a5fc-456b-9487-47eb450a01c6",
+        image: "./images/car09.min.jpg",
+        rentPerDay: 1000000,
+        capacity: 6,
+        description:
+          " Rear reading & courtesy lamps. Zone body construction -inc: front/rear crumple zones, hood deformation point.",
+        availableAt: "2022-03-23T15:49:05.563Z",
+      },
+      {
+        id: "6dfa349e-631c-46c0-a037-5c73902ff738",
+        image: "./images/car10.min.jpg",
+        rentPerDay: 300000,
+        capacity: 6,
+        description:
+          " Cargo compartment lamp. Body color fascias w/bright insert. Front/rear stabilizer bars.",
+        availableAt: "2022-03-23T15:49:05.563Z",
+      },
+      {
+        id: "803593fb-b857-4a01-adc4-651538217a04",
+        image: "./images/car11.min.jpg",
+        rentPerDay: 700000,
+        capacity: 2,
+        description:
+          " Cloth covered headliner. Sentry Key theft deterrent system. Air conditioning w/in-cabin microfilter.",
+        availableAt: "2022-03-23T15:49:05.563Z",
+      },
+      {
+        id: "e0a96736-a2d5-40ca-87de-64b59cac85d8",
+        image: "./images/car12.min.jpg",
+        rentPerDay: 800000,
+        capacity: 4,
+        description: " Multi-reflector halogen headlamps. Speed control.",
+        availableAt: "2022-03-23T15:49:05.563Z",
+      },
+      {
+        id: "e39f2965-57da-4d8f-afdb-74f6c54e69f0",
+        image: "./images/car13.min.jpg",
+        rentPerDay: 900000,
+        capacity: 6,
+        description:
+          " Leather-wrapped shift knob. Dual front illuminated visor vanity mirrors. Battery saver. Driver & front passenger map pockets.",
+        availableAt: "2022-03-23T15:49:05.563Z",
+      },
+      {
+        id: "c18a5545-2ce2-4330-aa3b-1bbcf6247519",
+        image: "./images/car14.min.jpg",
+        rentPerDay: 700000,
+        capacity: 2,
+        description:
+          " Front/rear side curtain airbags. Front & rear side curtain airbags. Body color front license plate brow. Rear body-color spoiler.",
+        availableAt: "2022-03-23T15:49:05.563Z",
+      },
+      {
+        id: "72530cba-051d-49d8-822b-deaf2e5330ca",
+        image: "./images/car15.min.jpg",
+        rentPerDay: 900000,
+        capacity: 4,
+        description:
+          " Remote fuel lid release. Electronic parking brake. Daytime running lights (DRL). Silver finish interior door handles. Back-up camera.",
+        availableAt: "2022-03-23T15:49:05.563Z",
+      },
+      {
+        id: "79cc327b-2b0f-4042-acdf-78386b2f8ebd",
+        image: "./images/car16.min.jpg",
+        rentPerDay: 200000,
+        capacity: 6,
+        description:
+          " Rear window defroster. High performance suspension. 1.8L DOHC 16-valve I4 engine -inc: engine cover.",
+        availableAt: "2022-03-23T15:49:05.563Z",
+      },
+      {
+        id: "22c969a7-04ce-4efb-a479-7ab3bc094cb9",
+        image: "./images/car17.min.jpg",
+        rentPerDay: 1000000,
+        capacity: 2,
+        description:
+          " Energy absorbing steering column. 3-point ELR/ALR front passenger seat belt w/pretensioner & load limiter.",
+        availableAt: "2022-03-23T15:49:05.563Z",
+      },
+      {
+        id: "1bfda124-5175-4b90-bee7-d66affdbcc66",
+        image: "./images/car18.min.jpg",
+        rentPerDay: 700000,
+        capacity: 6,
+        description:
+          " 3-point ELR/ALR front passenger seat belt w/pretensioner & load limiter. Rear passenger map pockets. Black roof molding.",
+        availableAt: "2022-03-23T15:49:05.563Z",
+      },
+      {
+        id: "08cbd537-497f-4305-b7b4-e7493c703a2c",
+        image: "./images/car19.min.jpg",
+        rentPerDay: 600000,
+        capacity: 6,
+        description: "",
+        availableAt: "2022-03-23T15:49:05.563Z",
+      },
+      {
+        id: "950575d6-958c-422e-a46b-c3ed2e1315ed",
+        image: "./images/car20.min.jpg",
+        rentPerDay: 700000,
+        capacity: 6,
+        description:
+          " Pwr accessory delay. Tire pressure monitoring system (TPMS). Tilt/telescoping steering column.",
+        availableAt: "2022-03-23T15:49:05.563Z",
+      },
+      {
+        id: "b89117fc-69e1-4366-ba21-9d6a0b2bfb04",
+        image: "./images/car21.min.jpg",
+        rentPerDay: 400000,
+        capacity: 6,
+        description:
+          " Floor carpeting. Electric speed-sensitive variable-assist pwr steering. Dana 44/226mm rear axle. Roof mounted antenna.",
+        availableAt: "2022-03-23T15:49:05.563Z",
+      },
+      {
+        id: "fc1d3297-ab17-40a9-a79c-ca7307ed5faa",
+        image: "./images/car22.min.jpg",
+        rentPerDay: 300000,
+        capacity: 6,
+        description:
+          " Pwr front vented disc/rear drum brakes. Pwr windows -inc: 1-touch open/close. Cloth covered headliner.",
+        availableAt: "2022-03-23T15:49:05.563Z",
+      },
+      {
+        id: "432d9ed1-e330-4953-ac33-f51a60a5799b",
+        image: "./images/car23.min.jpg",
+        rentPerDay: 200000,
+        capacity: 6,
+        description:
+          " Intermittent rear wiper w/washer. Energy absorbing front/rear bumpers. Engine mounts -inc: (2) solid, (1) liquid-filled.",
+        availableAt: "2022-03-23T15:49:05.563Z",
+      },
+      {
+        id: "32e7e56f-1a00-455f-bf4b-dbd2c8c4daaf",
+        image: "./images/car24.min.jpg",
+        rentPerDay: 600000,
+        capacity: 6,
+        description:
+          " 200mm front axle. Roof mounted antenna. Cargo compartment cover. Rear bench seat -inc: (3) adjustable headrests.",
+        availableAt: "2022-03-23T15:49:05.563Z",
+      },
+      {
+        id: "e76e884b-8f3e-4b90-a717-9239676d0191",
+        image: "./images/car25.min.jpg",
+        rentPerDay: 1000000,
+        capacity: 2,
+        description:
+          " Electric speed-sensitive variable-assist pwr steering. Steel side-door impact beams. Dual bright exhaust tips.",
         availableAt: "2022-03-23T15:49:05.563Z",
       },
     ]);
