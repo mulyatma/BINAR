@@ -10,14 +10,27 @@ THIS CHALLENGE IS MAKING RESTFUL API FOR CAR DATA MANAGEMENT WITH DATABASE USING
    - install Express.js `$ npm install express`
    - install Sequlize `$ npm install --save sequelize`
      You'll also have to manually install the driver for your database of choice:
-     `$ npm install --save pg pg-hstore` # Postgres
-     `$ npm install --save mysql2`
-     `$ npm install --save mariadb`
-     `$ npm install --save sqlite3`
-     `$ npm install --save tedious` # Microsoft SQL Server
-     `$ npm install --save oracledb` # Oracle Database
-   - install Sequlize-cli `npm install --save-dev sequelize-cli`
+     - `$ npm install --save pg pg-hstore` # Postgres
+     - `$ npm install --save mysql2`
+     - `$ npm install --save mariadb`
+     - `$ npm install --save sqlite3`
+     - `$ npm install --save tedious` # Microsoft SQL Server
+     - `$ npm install --save oracledb` # Oracle Database
+   - install Sequlize-cli `$ npm install --save-dev sequelize-cli`
    - configure the config.json file in `config/config.json`
+3. Creat database if not exists
+   ```sequelize db:create```
+5. Runing migration
+   ```sequelize db:migrate```
+6. Runing seeds
+   ```sequelize db:seed:all```
+8. Running app
+   ```npm run start```
+  
+# ENTITY RELATIONSHIP DIAGRAM
+
+![image](https://github.com/mulyatma/BINAR/assets/100142273/66e61b10-11ff-4700-acf6-f2706efaf8c0)
+
 
 # END POINTS
 
