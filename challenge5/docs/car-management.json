@@ -1,0 +1,812 @@
+{
+    "openapi": "3.0.2",
+    "info": {
+        "title": "Car Management API",
+        "version": "1.0"
+    },
+    "servers": [{ "url": "https://api.mulya.com/challenge5" }],
+    "paths": {
+        "/": {
+            "get": {
+                "tags": ["Root"],
+                "summary": "Root",
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "API is already connected!"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/cars": {
+            "get": {
+                "tags": ["Cars"],
+                "summary": "Get All Cars",
+                "security": [{ "bearerToken": [] }],
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "status": {
+                                            "type": "string",
+                                            "example": "OK"
+                                        },
+                                        "message": {
+                                            "type": "string",
+                                            "example": "Success"
+                                        },
+                                        "data": {
+                                            "type": "array",
+                                            "items": {
+                                                "type": "object",
+                                                "properties": {
+                                                    "id": {
+                                                        "type": "uuid",
+                                                        "example": "d290f1ee-6c54-4b01-90e6-d701748f0851"
+                                                    },
+                                                    "image": {
+                                                        "type": "string",
+                                                        "example": "https://storage.googleapis.com/car-management/2020-07-12T14:00:00.000Z-tesla-model-s.jpg"
+                                                    },
+                                                    "rentPerDay": {
+                                                        "type": "integer",
+                                                        "example": 100000
+                                                    },
+                                                    "capacity": {
+                                                        "type": "integer",
+                                                        "example": 4
+                                                    },
+                                                    "description": {
+                                                        "type": "string",
+                                                        "example": "Tesla Model S"
+                                                    },
+                                                    "availableAt": {
+                                                        "type": "string",
+                                                        "example": "2020-07-12T14:00:00.000Z"
+                                                    },
+                                                    "createdAt": {
+                                                        "type": "string",
+                                                        "example": "2020-07-12T14:00:00.000Z"
+                                                    },
+                                                    "updatedAt": {
+                                                        "type": "string",
+                                                        "example": "2020-07-12T14:00:00.000Z"
+                                                    },
+                                                    "deletedAt": {
+                                                        "type": "string",
+                                                        "example": "2020-07-12T14:00:00.000Z"
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "$ref": "#/components/responses/unauthorized"
+                    },
+                    "500": {
+                        "$ref": "#/components/responses/internalServerError"
+                    }
+                }
+            },
+            "post": {
+                "tags": ["Cars"],
+                "summary": "Create Car",
+                "security": [{ "bearerToken": [] }],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/createUpdateCar"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "description": "Created",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "status": {
+                                            "type": "string",
+                                            "example": "OK"
+                                        },
+                                        "message": {
+                                            "type": "string",
+                                            "example": "Success"
+                                        },
+                                        "data": {
+                                            "$ref": "#/components/schemas/car"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "$ref": "#/components/responses/unauthorized"
+                    },
+                    "403": {
+                        "$ref": "#/components/responses/forbidden"
+                    },
+                    "500": {
+                        "$ref": "#/components/responses/internalServerError"
+                    }
+                }
+            }
+        },
+        "/cars/:id": {
+            "get": {
+                "tags": ["Cars"],
+                "summary": "Get Car By Id",
+                "security": [{ "bearerToken": [] }],
+                "parameters": [
+                    {
+                        "$ref": "#/components/parameters/id"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "status": {
+                                            "type": "string",
+                                            "example": "OK"
+                                        },
+                                        "message": {
+                                            "type": "string",
+                                            "example": "Success"
+                                        },
+                                        "data": {
+                                            "type": "object",
+                                            "properties": {
+                                                "id": {
+                                                    "type": "uuid",
+                                                    "example": "d290f1ee-6c54-4b01-90e6-d701748f0851"
+                                                },
+                                                "image": {
+                                                    "type": "string",
+                                                    "example": "https://storage.googleapis.com/car-management/2020-07-12T14:00:00.000Z-tesla-model-s.jpg"
+                                                },
+                                                "rentPerDay": {
+                                                    "type": "integer",
+                                                    "example": 100000
+                                                },
+                                                "capacity": {
+                                                    "type": "integer",
+                                                    "example": 4
+                                                },
+                                                "description": {
+                                                    "type": "string",
+                                                    "example": "Tesla Model S"
+                                                },
+                                                "availableAt": {
+                                                    "type": "string",
+                                                    "example": "2020-07-12T14:00:00.000Z"
+                                                },
+                                                "createdAt": {
+                                                    "type": "string",
+                                                    "example": "2020-07-12T14:00:00.000Z"
+                                                },
+                                                "updatedAt": {
+                                                    "type": "string",
+                                                    "example": "2020-07-12T14:00:00.000Z"
+                                                },
+                                                "deletedAt": {
+                                                    "type": "string",
+                                                    "example": "2020-07-12T14:00:00.000Z"
+                                                },
+                                                "created": {
+                                                    "$ref": "#/components/schemas/user"
+                                                },
+                                                "updated": {
+                                                    "$ref": "#/components/schemas/user"
+                                                },
+                                                "deleted": {
+                                                    "$ref": "#/components/schemas/user"
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "$ref": "#/components/responses/unauthorized"
+                    },
+                    "404": {
+                        "$ref": "#/components/responses/notFound"
+                    },
+                    "500": {
+                        "$ref": "#/components/responses/internalServerError"
+                    }
+                }
+            },
+            "put": {
+                "tags": ["Cars"],
+                "summary": "Update Car By Id",
+                "security": [{ "bearerToken": [] }],
+                "parameters": [
+                    {
+                        "$ref": "#/components/parameters/id"
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/createUpdateCar"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "status": {
+                                            "type": "string",
+                                            "example": "OK"
+                                        },
+                                        "message": {
+                                            "type": "string",
+                                            "example": "Success"
+                                        },
+                                        "data": {
+                                            "$ref": "#/components/schemas/car"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "$ref": "#/components/responses/unauthorized"
+                    },
+                    "403": {
+                        "$ref": "#/components/responses/forbidden"
+                    },
+                    "404": {
+                        "$ref": "#/components/responses/notFound"
+                    },
+                    "500": {
+                        "$ref": "#/components/responses/internalServerError"
+                    }
+                }
+            },
+            "delete": {
+                "tags": ["Cars"],
+                "summary": "Delete Car By Id",
+                "security": [{ "bearerToken": [] }],
+                "parameters": [
+                    {
+                        "$ref": "#/components/parameters/id"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "status": {
+                                            "type": "string",
+                                            "example": "Delete Success"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "$ref": "#/components/responses/unauthorized"
+                    },
+                    "403": {
+                        "$ref": "#/components/responses/forbidden"
+                    },
+                    "404": {
+                        "$ref": "#/components/responses/notFound"
+                    },
+                    "500": {
+                        "$ref": "#/components/responses/internalServerError"
+                    }
+                }
+            }
+        },
+        "/admin/register": {
+            "post": {
+                "tags": ["Admin"],
+                "summary": "Register Admin",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/newUser"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "description": "Created",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "status": {
+                                            "type": "string",
+                                            "example": "OK"
+                                        },
+                                        "message": {
+                                            "type": "string",
+                                            "example": "Success"
+                                        },
+                                        "data": {
+                                            "$ref": "#/components/schemas/user"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "$ref": "#/components/responses/unauthorized"
+                    },
+                    "403": {
+                        "$ref": "#/components/responses/forbidden"
+                    },
+                    "500": {
+                        "$ref": "#/components/responses/internalServerError"
+                    }
+                }
+            }
+        },
+        "/register": {
+            "post": {
+                "tags": ["User"],
+                "summary": "Register User",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/newUser"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "description": "Created",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "status": {
+                                            "type": "string",
+                                            "example": "OK"
+                                        },
+                                        "message": {
+                                            "type": "string",
+                                            "example": "Success"
+                                        },
+                                        "data": {
+                                            "$ref": "#/components/schemas/user"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "message": {
+                                            "type": "string",
+                                            "example": "Email already exists"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "500": {
+                        "$ref": "#/components/responses/internalServerError"
+                    }
+                }
+            }
+        },
+        "/login": {
+            "post": {
+                "tags": ["Auth"],
+                "summary": "Login",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object",
+                                "properties": {
+                                    "email": {
+                                        "type": "string",
+                                        "example": "mulya@gmail.com"
+                                    },
+                                    "password": {
+                                        "type": "string",
+                                        "example": "123456"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "id": {
+                                            "type": "uuid",
+                                            "example": "d290f1ee-6c54-4b01-90e6-d701748f0851"
+                                        },
+                                        "name": {
+                                            "type": "string",
+                                            "example": "Mulya"
+                                        },
+                                        "email": {
+                                            "type": "string",
+                                            "example": "mulya@gmail.com"
+                                        },
+                                        "encryptedPassword": {
+                                            "type": "string",
+                                            "example": "$2b$10$6Z3Z1Z1Z1Z1Z1Z1Z1Z1Z1uZ"
+                                        },
+                                        "role": {
+                                            "type": "string",
+                                            "example": "admin"
+                                        },
+                                        "createdAt": {
+                                            "type": "string",
+                                            "example": "2020-07-12T14:00:00.000Z"
+                                        },
+                                        "updatedAt": {
+                                            "type": "string",
+                                            "example": "2020-07-12T14:00:00.000Z"
+                                        },
+                                        "token": {
+                                            "type": "string",
+                                            "example": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "message": {
+                                            "type": "string",
+                                            "example": "Email or password is wrong"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "500": {
+                        "$ref": "#/components/responses/internalServerError"
+                    }
+                }
+            }
+        },
+        "/current/user": {
+            "get": {
+                "tags": ["User"],
+                "summary": "Get Current User",
+                "security": [{ "bearerToken": [] }],
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/user"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "$ref": "#/components/responses/unauthorized"
+                    },
+                    "500": {
+                        "$ref": "#/components/responses/internalServerError"
+                    }
+                }
+            }
+        },
+        "/*": {
+            "get": {
+                "tags": ["Root"],
+                "summary": "Not Found",
+                "responses": {
+                    "404": {
+                        "$ref": "#/components/responses/notFound"
+                    }
+                }
+            }
+        }
+    },
+    "components": {
+        "securitySchemes": {
+            "bearerToken": {
+                "type": "http",
+                "scheme": "bearer",
+                "bearerFormat": "JWT"
+            }
+        },
+        "responses": {
+            "unauthorized": {
+                "description": "Unauthorized",
+                "content": {
+                    "application/json": {
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "status": {
+                                    "type": "string",
+                                    "example": "FAIL"
+                                },
+                                "message": {
+                                    "type": "string",
+                                    "example": "Unauthorized"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "forbidden": {
+                "description": "Forbidden",
+                "content": {
+                    "application/json": {
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "status": {
+                                    "type": "string",
+                                    "example": "FAIL"
+                                },
+                                "message": {
+                                    "type": "string",
+                                    "example": "Forbidden"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "notFound": {
+                "description": "Not Found",
+                "content": {
+                    "application/json": {
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "status": {
+                                    "type": "string",
+                                    "example": "FAIL"
+                                },
+                                "message": {
+                                    "type": "string",
+                                    "example": "Resource not found"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "internalServerError": {
+                "description": "Internal Server Error",
+                "content": {
+                    "application/json": {
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "status": {
+                                    "type": "string",
+                                    "example": "FAIL"
+                                },
+                                "message": {
+                                    "type": "string",
+                                    "example": "Failed to get resource"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "parameters": {
+            "id": {
+                "name": "id",
+                "in": "path",
+                "required": true,
+                "description": "Id",
+                "schema": {
+                    "type": "uuid",
+                    "example": "d290f1ee-6c54-4b01-90e6-d701748f0851"
+                }
+            }
+        },
+        "schemas": {
+            "createUpdateCar": {
+                "type": "object",
+                "properties": {
+                    "image": {
+                        "type": "string",
+                        "example": "https://storage.googleapis.com/car-management/2020-07-12T14:00:00.000Z-tesla-model-s.jpg"
+                    },
+                    "rentPerDay": {
+                        "type": "integer",
+                        "example": 100000
+                    },
+                    "capacity": {
+                        "type": "integer",
+                        "example": 4
+                    },
+                    "description": {
+                        "type": "string",
+                        "example": "Tesla Model S"
+                    },
+                    "availableAt": {
+                        "type": "string",
+                        "example": "2020-07-12T14:00:00.000Z"
+                    }
+                }
+            },
+            "car": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "type": "uuid",
+                        "example": "d290f1ee-6c54-4b01-90e6-d701748f0851"
+                    },
+                    "image": {
+                        "type": "string",
+                        "example": "https://storage.googleapis.com/car-management/2020-07-12T14:00:00.000Z-tesla-model-s.jpg"
+                    },
+                    "rentPerDay": {
+                        "type": "integer",
+                        "example": 100000
+                    },
+                    "capacity": {
+                        "type": "integer",
+                        "example": 4
+                    },
+                    "description": {
+                        "type": "string",
+                        "example": "Tesla Model S"
+                    },
+                    "availableAt": {
+                        "type": "string",
+                        "example": "2020-07-12T14:00:00.000Z"
+                    },
+                    "createdAt": {
+                        "type": "string",
+                        "example": "2020-07-12T14:00:00.000Z"
+                    },
+                    "updatedAt": {
+                        "type": "string",
+                        "example": "2020-07-12T14:00:00.000Z"
+                    },
+                    "deletedAt": {
+                        "type": "string",
+                        "example": "2020-07-12T14:00:00.000Z"
+                    },
+                    "createdBy": {
+                        "type": "uuid",
+                        "example": "d290f1ee-6c54-4b01-90e6-d701748f0851"
+                    },
+                    "updatedBy": {
+                        "type": "uuid",
+                        "example": "d290f1ee-6c54-4b01-90e6-d701748f0851"
+                    },
+                    "deletedBy": {
+                        "type": "uuid",
+                        "example": "d290f1ee-6c54-4b01-90e6-d701748f0851"
+                    }
+                }
+            },
+            "user": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "type": "uuid",
+                        "example": "d290f1ee-6c54-4b01-90e6-d701748f0851"
+                    },
+                    "name": {
+                        "type": "string",
+                        "example": "Mulya"
+                    },
+                    "email": {
+                        "type": "string",
+                        "example": "mulya@gmail.com"
+                    },
+                    "encryptedPassword": {
+                        "type": "string",
+                        "example": "$2b$10$6Z3Z1Z1Z1Z1Z1Z1Z1Z1Z1uZ"
+                    },
+                    "role": {
+                        "type": "string",
+                        "example": "admin"
+                    },
+                    "createdAt": {
+                        "type": "string",
+                        "example": "2020-07-12T14:00:00.000Z"
+                    },
+                    "updatedAt": {
+                        "type": "string",
+                        "example": "2020-07-12T14:00:00.000Z"
+                    }
+                }
+            },
+            "newUser": {
+                "type": "object",
+                "properties": {
+                    "name": {
+                        "type": "string",
+                        "example": "Mulya"
+                    },
+                    "email": {
+                        "type": "string",
+                        "example": "mulya@gmail.com"
+                    },
+                    "password": {
+                        "type": "string",
+                        "example": "123456"
+                    }
+                }
+            }
+        }
+    }
+}
