@@ -2,21 +2,71 @@ import Footer from "./components/Footer/Footer";
 import Navbar from "./components/Header/Navbar";
 import Hero from "./components/Main/Hero";
 import "./CariMobil.css";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 function CariMobil() {
+  const getRandomInt = (min, max) => {
+    min = Math.ceil(min);
+    max = Math.floor(max);
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+  };
+
+  const populateCars = (cars) => {
+    return cars.map((car) => {
+      const isPositive = getRandomInt(0, 1) === 1;
+      const timeAt = new Date();
+      const mutator = getRandomInt(1000000, 100000000);
+      const availableAt = new Date(
+        timeAt.getTime() + (isPositive ? mutator : -1 * mutator)
+      );
+
+      return {
+        ...car,
+        availableAt,
+      };
+    });
+  };
+
   const [cars, setCars] = useState([]);
 
-  useEffect(() => {
-    const getCars = async () => {
-      const respons = await fetch(
-        "https://raw.githubusercontent.com/fnurhidayat/probable-garbanzo/main/data/cars.min.json"
-      );
-      const data = await respons.json();
-      setCars(data);
-    };
-    getCars();
-  }, []);
+  const [driver, setDriver] = useState("");
+  const [date, setDate] = useState("");
+  const [hours, setHours] = useState("");
+  const [passanger, setPassanger] = useState("");
+
+  const getCars = async () => {
+    const respons = await fetch(
+      "https://raw.githubusercontent.com/fnurhidayat/probable-garbanzo/main/data/cars.min.json"
+    );
+    const data = await respons.json();
+    setCars(populateCars(data));
+  };
+
+  const filter = (e) => {
+    e.preventDefault();
+    const fullDateTime = new Date(`${date} ${hours}`);
+
+    if (hours == "" || date == "") {
+      alert("Form Belum Lengkap");
+    }
+
+    if (cars.length === 0) {
+      getCars();
+    }
+    const condition = cars.filter((i) => {
+      if (passanger === "") {
+        return i.available && new Date(i.availableAt).getTime() >= fullDateTime;
+      } else {
+        return (
+          i.available &&
+          i.capacity >= passanger &&
+          new Date(i.availableAt).getTime() >= fullDateTime
+        );
+      }
+    });
+
+    setCars(condition);
+  };
 
   return (
     <>
@@ -25,11 +75,18 @@ function CariMobil() {
       <Hero />
 
       <section id="carimobil" className="border rounded">
-        <div id="search" className="container-fluid">
+        <form onSubmit={filter} id="search" className="container-fluid">
           <div className="row align-items-center">
             <div className="col">
               <label>Tipe Driver</label>
-              <select className="form-select" id="specificSize">
+              <select
+                className="form-select"
+                id="specificSize"
+                value={driver}
+                onChange={(e) => {
+                  setDriver(e.target.value);
+                }}
+              >
                 <option selected>Pilih Tipe Driver</option>
                 <option value="1">Dengan Supir</option>
                 <option value="2">Tanpa Supir (Lepas Kunci)</option>
@@ -37,11 +94,26 @@ function CariMobil() {
             </div>
             <div className="col">
               <label>Tanggal</label>
-              <input type="date" className="form-control" id="inputDate" />
+              <input
+                type="date"
+                className="form-control"
+                id="inputDate"
+                value={date}
+                onChange={(e) => {
+                  setDate(e.target.value);
+                }}
+              />
             </div>
             <div className="col">
               <label>Waktu Jemput/Ambil</label>
-              <select className="form-select" id="inputTime">
+              <select
+                className="form-select"
+                id="inputTime"
+                value={hours}
+                onChange={(e) => {
+                  setHours(e.target.value);
+                }}
+              >
                 <option selected>Pilih Waktu</option>
                 <option value="08:00:00">08.00 WIB</option>
                 <option value="09:00:00">09.00 WIB</option>
@@ -58,6 +130,10 @@ function CariMobil() {
                   className="form-control"
                   id="inputPassenger"
                   placeholder="Jumlah Penumpang"
+                  value={passanger}
+                  onChange={(e) => {
+                    setPassanger(e.target.value);
+                  }}
                 />
                 <div className="input-group-text">
                   <svg
@@ -75,11 +151,13 @@ function CariMobil() {
             </div>
             <div className="col">
               <div>
-                <button id="serach-btn">Cari Mobil</button>
+                <button id="serach-btn" type="submit">
+                  Cari Mobil
+                </button>
               </div>
             </div>
           </div>
-        </div>
+        </form>
       </section>
 
       <section id="hasilcari" style={{}}>
@@ -101,15 +179,15 @@ function CariMobil() {
                   </div>
                   <ul className="d-flex flex-column">
                     <li>
-                      <img src="images/fi_users.png" alt="" />
+                      <img src="./images/fi_users.png" alt="" />
                       {car.capacity}
                     </li>
                     <li>
-                      <img src="images/fi_settings.png" alt="" />
+                      <img src="./images/fi_settings.png" alt="" />
                       {car.transmission}
                     </li>
                     <li>
-                      <img src="images/fi_calendar.png" alt="" />
+                      <img src="./images/fi_calendar.png" alt="" />
                       {car.year}
                     </li>
                   </ul>
