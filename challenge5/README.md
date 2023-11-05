@@ -1,4 +1,4 @@
-# BINAR CHALLENGE 4
+# BINAR CHALLENGE 5
 
 THIS CHALLENGE IS MAKING RESTFUL API FOR CAR DATA MANAGEMENT WITH DATABASE USING EXPRESS.JS, SEQUELIZE, AND POSTGRES AS DBMS, bcrypt for encrypt password, jsonwebtoken to make token.
 
@@ -29,10 +29,12 @@ THIS CHALLENGE IS MAKING RESTFUL API FOR CAR DATA MANAGEMENT WITH DATABASE USING
 
 # ENTITY RELATIONSHIP DIAGRAM
 
-![image](https://github.com/mulyatma/BINAR/assets/100142273/66e61b10-11ff-4700-acf6-f2706efaf8c0)
+![image](https://github.com/mulyatma/BINAR/assets/100142273/b41118db-7a40-423c-b5ea-92a734af9c6f)
+
 
 # END POINTS
 
+- API Documentation `http://localhost:3000/api-docs`
 - Get message ping `http://localhost:3000/`
 - Get list cars `http://localhost:3000/cars`
 - Get car by id `http://localhost:3000/cars/:id`
