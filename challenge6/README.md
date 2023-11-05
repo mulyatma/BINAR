@@ -1,8 +1,25 @@
-# React + Vite
+# CHALLENGE 6
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+THIS CHALLENGE IS ABOUT CONVERTING CHALLENGE 2 TO REACT APP 
 
-Currently, two official plugins are available:
+In this challenge I used Vite and Bootstarp
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+
+
+## Installation
+
+Clone This Repository
+```bash
+https://github.com/mulyatma/BINAR/tree/d8db5b9ea04d4744532cb1e09e3416ce3d5d7458/challenge6
+```
+
+Install dependencies
+```bash
+  npm install 
+```
+
+Run This Project
+```bash
+    npm run dev
+```
+    
