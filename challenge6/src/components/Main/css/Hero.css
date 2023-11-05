@@ -1,0 +1,10 @@
+#hero {
+  background: #f1f3ff;
+  padding-top: 97px;
+  padding-right: 0;
+  padding-bottom: 0;
+}
+#hero .container-fluid,
+.img {
+  padding: 0;
+}

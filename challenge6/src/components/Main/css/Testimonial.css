@@ -1,0 +1,14 @@
+.carousel {
+  width: 832px;
+  background: #f1f3ff;
+  padding: 69px;
+}
+
+.carousel-item .row {
+  align-items: center;
+}
+
+.stars .flex-row {
+  padding: 0;
+  margin-bottom: 0.5rem;
+}

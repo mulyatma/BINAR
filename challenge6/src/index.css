@@ -1,0 +1,99 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+a {
+  text-decoration: none;
+  color: #000;
+}
+
+li {
+  list-style-type: none;
+}
+
+button {
+  background-color: #5cb85f;
+  color: #fff;
+  border: 0;
+  border-radius: 2px;
+  padding: 8px 12px;
+}
+
+section {
+  padding: 50px 136px;
+}
+
+@media only screen and (max-width: 768px) {
+  .navbar {
+    padding: 1.5rem 1rem 0;
+  }
+
+  .offcanvas-size-md {
+    /* add Responsivenes to default offcanvas */
+    --bs-offcanvas-width: 50% !important;
+  }
+
+  section {
+    padding: 30px 16px;
+  }
+
+  #home img {
+    width: 100%;
+    padding-left: 1rem;
+  }
+
+  #home {
+    padding: 90px 1rem 0;
+  }
+
+  .imgourservices img {
+    width: 80%;
+  }
+
+  #ourservices .col-lg-6,
+  ul {
+    padding-left: 0;
+  }
+
+  #ourservices .container .row {
+    gap: 1rem;
+  }
+
+  #whyus .container {
+    padding: 0;
+  }
+  #whyus .container .row {
+    gap: 1rem;
+  }
+
+  .carousel {
+    width: 100%;
+  }
+
+  .carousel-item .row {
+    justify-content: center;
+  }
+
+  .carousel-item .row img {
+    padding-bottom: 1.5rem;
+  }
+
+  .carousel-control-next,
+  .carousel-control-prev {
+    bottom: auto;
+    top: 15%;
+  }
+
+  #footer {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  footer section {
+    padding-bottom: 60px;
+  }
+}

@@ -1,0 +1,9 @@
+#ourservices .col-lg-6 ul {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+#ourservices .col-lg-6 ul img {
+  padding-right: 1rem;
+}

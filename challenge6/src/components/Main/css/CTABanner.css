@@ -1,0 +1,15 @@
+#ctabanner .container {
+  color: #fff;
+  border-radius: 13px;
+  background: #0d28a6;
+  padding: 64px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+#ctabanner .container h1 {
+  margin-bottom: 16px;
+}
+#ctabanner .container button {
+  margin-top: 16px;
+}
