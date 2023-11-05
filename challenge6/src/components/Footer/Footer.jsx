@@ -10,10 +10,10 @@ function Footer() {
           <p>081-233-334-808</p>
         </div>
         <div className="fnavigation">
-          <a href="">Our Services</a>
-          <a href="">Why Us</a>
-          <a href="">Testimoni</a>
-          <a href="">FAQ</a>
+          <a href="/#ourservices">Our Services</a>
+          <a href="/#whyus">Why Us</a>
+          <a href="/#testimonial">Testimoni</a>
+          <a href="/#faq">FAQ</a>
         </div>
         <div className="sosmed">
           <p>Connect with us</p>

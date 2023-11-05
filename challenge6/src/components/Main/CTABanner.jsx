@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import "./css/CTABanner.css";
 
 function CTABanner() {
@@ -9,9 +10,9 @@ function CTABanner() {
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
           eiusmod tempor incididunt ut labore et dolore magna aliqua.
         </p>
-        <a href="carimobil.html">
+        <Link to="/cars">
           <button>Mulai Sewa Mobil</button>
-        </a>
+        </Link>
       </div>
     </section>
   );

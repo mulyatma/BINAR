@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom";
 import "./Navbar.css";
 
 function Navbar() {
@@ -7,22 +6,22 @@ function Navbar() {
       {/* <!-- NAVBAR --> */}
       <nav className="navbar fixed-top">
         <div className="container">
-          <Link to="/">
+          <a href="/#hero">
             <div className="brand" href=""></div>
-          </Link>
+          </a>
           {/* <!-- NAVIGATION --> */}
           <ul className="navbar-nav navigation d-none d-lg-flex">
             <li className="nav-item">
-              <a href="#ourservices">Our Services</a>
+              <a href="/#ourservices">Our Services</a>
             </li>
             <li className="nav-item">
-              <a href="#whyus">Why Us</a>
+              <a href="/#whyus">Why Us</a>
             </li>
             <li className="nav-item">
-              <a href="#testimonial">Testimonial</a>
+              <a href="/#testimonial">Testimonial</a>
             </li>
             <li className="nav-item">
-              <a href="#faq">FAQ</a>
+              <a href="/#faq">FAQ</a>
             </li>
             <li className="nav-item">
               <button href="#">Register</button>
