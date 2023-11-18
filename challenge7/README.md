@@ -1,9 +1,20 @@
-# BCR API
+# CHALLENGE 7
 
-Di dalam repository ini terdapat implementasi API dari Binar Car Rental.
-Tugas kalian disini adalah:
-1. Fork repository
-2. Tulis unit test di dalam repository ini menggunakan `jest`.
-3. Coverage minimal 70%
+In this repository there is an API implementation from Binar Car Rental.
+My task here is:
+1. Write unit tests in this repository using `jest`.
+2. Minimal coverage 70%
+3. Deploy
 
-Good luck!
+#### LINK DEPLOY
+
+
+
+
+#### COVERAGE
+![image](https://github.com/mulyatma/BINAR/assets/100142273/75612d78-9f67-48a7-836a-8c40c94a698e)
+
+
+![image](https://github.com/mulyatma/BINAR/assets/100142273/342bdeed-c97f-4170-8b2b-200eabac06b0)
+
+
