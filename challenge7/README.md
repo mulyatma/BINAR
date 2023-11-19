@@ -7,7 +7,7 @@ My task here is:
 3. Deploy
 
 #### LINK DEPLOY
-[click here](deploy-production-f7d1.up.railway.app)
+[deploy-production-f7d1.up.railway.app](https://deploy-production-f7d1.up.railway.app/)
 
 
 
